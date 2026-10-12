@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  /* font */
+  --font-body: "Inter", sans-serif;
+  --font-family: "DM Sans", sans-serif;
+  /* color */
+  --color-primary: #0090f0;
+  --color-text-color:#7b7b7b;
+  --color-bg-color:#f3f3f3;
+  --color-white:#fff;
+  --color-heading-color:#253237;
+  --color-border-color:#d6d6d6d5;
+}
+
+@layer base{
+    body{
+        background: var(--color-bg-color);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;    
+        font-family: var(--font-body);
+        text-transform: capitalize;
+        
+    }
+    img{
+        width: 100%;
+    }
+    h1,h2,h3,h4{
+        color: var(--color-heading-color);
+        font-family: var(--font-family);
+    }
+    span{   
+        color: var(--color-primary)
+    }
+    p{
+        color: var(--color-text-color)
+    }
+    input,button,select,textarea{
+        outline: none;
+        border: none;
+    }
+    a{
+        text-decoration: none;
+        color: var(--color-heading-color)
+    }
+    
+}
+@layer components{
+    .container {
+        @apply flex items-center justify-around px-3.5 py-0 
+        m-auto w-[90%] max-w-337.5
+        /* max-width: 1350px;
+        width: 90%;
+        margin: auto; */
+
+        
+        /* عشان اجيب الكونتينر فى النص يبقى فى مسافة يمين وشمال */
+    } 
+    .form {
+        @apply w-lg border border-primary rounded-4xl flex justify-end
+        bg-mist-200
+    }
+    .icon{
+        @apply cursor-pointer relative 
+    }
+    .cart{
+        @apply absolute -top-1.25 -right-2.5 bg-primary text-white rounded-full w-5 h-5 text-center text-sm
+    }
+    .NavLink.active{
+        @apply border border-blue-300  text-lg rounded-2xl
+    }
+    .swiper-slide{
+        @apply text-center text-[18px]  flex justify-center items-center   
+    }
+    
+}
+
+
+/* @theme	تعريف ألوان / Fonts / قيم Theme لـ Tailwind
+@layer base	القواعد الأساسية لـ body, h1, p...
+@layer components	Components/classes قابلة لإعادة الاستخدام
+@layer utilities	Utilities مخصصة صغيرة */;
